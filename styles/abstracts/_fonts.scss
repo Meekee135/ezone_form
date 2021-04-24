@@ -1,0 +1,9 @@
+$big: "UniformProCon-Blk";
+$copy-header: url("../font-files/sharpiro-bold.woff2 ");
+$copy-p: url("../font-files/sharpiro-regular.woff2");
+$action: url("../font-files/uniform-pro-con-medium.woff2");
+
+@font-face {
+  font-family: "UniformProCon-Blk";
+  src: url("./font-files/uniform-pro-con-black.woff2") format("woff2");
+}
