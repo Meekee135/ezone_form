@@ -56,23 +56,28 @@
       </span>
       <div class="color"></div>
       <div class="pills">
-        <svg id="right">
+        <svg id="right-top">
           <use href="#pills-2" aria-hidden="true" />
         </svg>
-        <svg id="left">
+        <svg id="left-bt">
           <use href="#pills-1" aria-hidden="true" />
         </svg>
       </div>
-      <modal class="popup">
-        <span id="start">
-          <span>If you would like to recieve customized training</span>
-          <div>
-            <button class="btn no">I'll do w/o</button>
-            <button class="btn yes">sign up</button>
-          </div>
-        </span>
-      </modal>
     </main>
+    <!-- modal.form-window is styled in components folder -->
+    <modal class="popup form-window">
+      <span id="start">
+        <span>If you would like to recieve customized training</span>
+        <div>
+          <button class="btn no">I'll do w/o</button>
+          <button class="btn yes">sign up</button>
+        </div>
+      </span>
+      <!-- change to meaningful mark-up (dataset, formfiled, form ect I guess) -->
+      <div id="left"></div>
+      <div id="mid"></div>
+      <div id="right"></div>
+    </modal>
 
     <script type="module" src="/main.js"></script>
     <svg style="display: none">

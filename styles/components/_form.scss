@@ -1,0 +1,37 @@
+// to do
+// |-change divs#mid ... to semantic markup (somethink like dataset, formfiled, form ?) in index.html
+// |
+// |-try to write some if statements or sass tricks to be able to change style of
+// |    the modal with overitting '!important'
+// |
+// |----make middle #mid section for form inputs and header question to maintain good width on all screen sizes
+//    |  you can use clamp(200px, 40vw, 700px) so that it wont get too big or to small without mediaqueries
+//    |
+//    |-create a grid that sits inside and holds the checkbox answers (fps, mmorpg, racing ...)
+//    |
+//    |- style as in XD, invisible checkboxes will be useful
+
+.form-window {
+  position: relative !important;
+  grid-row: 1/3;
+  grid-column: 1/-1;
+  width: 100% !important;
+  height: 100% !important;
+  display: grid;
+  grid-template-columns: 1fr 40% 1fr;
+  grid-template-rows: clamp(81px, 5.5vw, 105px) 1fr;
+  border: none !important;
+  backdrop-filter: blur(10px) brightness(50%) !important;
+  #start {
+    left: -30%;
+  }
+}
+#left {
+  grid-row: 2/3;
+}
+#mid {
+  grid-row: 2/3;
+}
+#right {
+  grid-row: 2/3;
+}
