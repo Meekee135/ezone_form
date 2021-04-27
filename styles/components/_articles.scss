@@ -11,40 +11,127 @@
   padding: 4rem 0;
   justify-content: center;
   gap: 3rem;
-  .article {
-    background-color: red;
-    width: 220px;
-    height: 330px;
-    padding: 1.5rem;
-    border-radius: 4px;
-    background-repeat: no-repeat;
-    background-size: cover;
+}
+.article {
+  background-color: red;
+  width: 220px;
+  height: 330px;
+  padding: 1.5rem;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  p {
+    font-family: $big;
+    padding-bottom: 3rem;
+  }
+  h1 {
+    font-family: $copy-p;
+    font-weight: 900;
+    padding-bottom: 4rem;
+  }
+  button {
+    font-family: $action;
     color: white;
-    p {
-      font-family: $big;
-      padding-bottom: 3rem;
-    }
-    h1 {
+    border: 1px solid white;
+  }
+}
+.a1 {
+  background-image: url(../../public/image6.jpg);
+}
+.a2 {
+  background-image: url(../../public/image2.jpg);
+}
+.a3 {
+  background-image: url(../../public/image3.jpg);
+}
+.a4 {
+  background-image: url(../../public/image4.jpg);
+}
+
+.modal-article {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(22, 21, 43, 0.9);
+  color: white;
+  margin: auto;
+  margin-top: 30px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  overflow-y: auto;
+  padding-right: 17px;
+  overflow: -moz-scrollbars-none;
+}
+
+.modal-article-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto;
+  overflow-y: auto;
+  padding-left: 16vw;
+  padding-right: 16vw;
+
+  iframe {
+    grid-area: 1/1/2/3;
+    aspect-ratio: 4/3;
+  }
+  .text-content {
+    grid-area: 2/1/3/2;
+
+    .artCategory {
+      font-size: 16px;
       font-family: $copy-p;
-      font-weight: 900;
-      padding-bottom: 4rem;
+      color: $green;
+      padding-bottom: 5vh;
     }
-    button {
-      font-family: $action;
+    .artTitle {
+      font-size: 56px;
+      font-family: $copy-header;
+      color: $green;
+      padding-bottom: 5vh;
+    }
+    .artContent {
+      font-size: 16px;
+      font-family: $copy-p;
       color: white;
-      border: 1px solid white;
+      padding-bottom: 5vh;
     }
   }
-  .a1 {
-    background-image: url(../../public/image6.jpg);
+  .relatedArt {
+    grid-area: 3/1/4/3;
+    height: 500px;
+    font-family: $copy-header;
   }
-  .a2 {
-    background-image: url(../../public/image2.jpg);
+}
+.modal-article::-webkit-scrollbar {
+  width: 0 !important;
+  display: none;
+}
+
+.showMore {
+  grid-area: 4/1/5/3;
+  color: $green;
+  height: 400px;
+  font-family: $copy-header;
+  font-size: 24px;
+
+  display: grid;
+  place-content: center;
+  .btn {
+    border: 1px solid $green;
+    color: $green;
+    margin: auto;
+    margin-top: 5vh;
   }
-  .a3 {
-    background-image: url(../../public/image3.jpg);
-  }
-  .a4 {
-    background-image: url(../../public/image4.jpg);
-  }
+}
+
+.closeArticle {
+  height: 6vw;
+  width: 6vw;
+  right: 4vw;
+  top: 1vw;
+  position: absolute;
 }
