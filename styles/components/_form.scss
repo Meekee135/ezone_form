@@ -22,6 +22,9 @@
   #start {
     left: -40%;
   }
+  > :not(:first-child) {
+    display: inherit !important;
+  }
 }
 form {
   justify-self: center;
@@ -51,6 +54,13 @@ form {
       font-family: $action;
       text-transform: uppercase;
       font-size: 27px;
+    }
+    .field {
+      display: grid;
+      input {
+        justify-self: center;
+        display: none;
+      }
     }
   }
 }

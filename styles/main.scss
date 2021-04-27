@@ -123,6 +123,9 @@ main {
       gap: 50px;
     }
   }
+  > :not(:first-child) {
+    display: none;
+  }
 }
 .btn {
   font-family: $action;
