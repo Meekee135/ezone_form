@@ -11,7 +11,7 @@ body {
   background-color: $dark-blue;
   height: 100vh;
   display: grid;
-  grid-template-rows: clamp(81px, 5.5vw, 105px) 140%;
+  grid-template-rows: clamp(81px, 5.5vw, 105px) 160%;
   // overflow: hidden;
 }
 nav {

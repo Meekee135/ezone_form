@@ -15,8 +15,8 @@
   width: 100% !important;
   height: 100vh !important;
   display: grid;
-  grid-template-columns: 1fr minmax(0, 850px) 1fr;
-  grid-template-rows: clamp(81px, 5.5vw, 105px) 33% 40% 1fr;
+  grid-template-columns: 1fr minmax(0, 800px) 1fr;
+  grid-template-rows: clamp(81px, 5.5vw, 105px) 30% 30% 1fr;
   border: none !important;
   backdrop-filter: blur(10px) brightness(50%) !important;
   @supports not (backdrop-filter: blur(10px)) {
@@ -48,10 +48,10 @@ form {
       position: absolute;
       transform: translateX(-50%);
       left: 50%;
-      top: -37%;
+      top: -45%;
       font-size: 25px;
       font-family: $copy-header;
-      color: #e3e3e5;
+      color: $offwhite-font;
     }
     .field {
       display: grid;
@@ -61,22 +61,18 @@ form {
       height: min-content;
       grid-gap: 0;
       label {
-        // background: linear-gradient($grey-font 50%, $green 50%);
-        // background-size: 100% 200%;
-        // background-position-y: 0%;
-        background-position-x: 100%;
-        background: linear-gradient(to left, $grey-font 50%, $green 50%);
-        background-size: 200% 100%;
+        font-family: $action;
+        font-size: 24px;
+        color: transparent;
+        text-transform: uppercase;
+        background: linear-gradient(-50deg, $grey-font 50%, $green 50%);
+        background-size: 230% 100%;
         background-position-x: 100%;
         background-repeat: no-repeat;
         background-clip: text;
         -webkit-background-clip: text;
-        color: transparent;
-        position: relative;
-        font-family: $action;
-        text-transform: uppercase;
-        font-size: 24px;
-        transition: background-position 0.15s ease-out;
+        transition: background-position 0.13s ease-out;
+        cursor: pointer;
       }
       input {
         display: none;
