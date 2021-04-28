@@ -76,13 +76,14 @@ form {
         font-size: 24px;
         color: transparent;
         text-transform: uppercase;
-        background: linear-gradient(-50deg, $grey-font 50%, $bright-green 50%);
+        // background: linear-gradient(-50deg, $grey-font 50%, $bright-green 50%);
+        background: linear-gradient(-50deg, $grey-font 50%, $purple 50%);
         background-size: 230% 100%;
         background-position-x: 100%;
         background-repeat: no-repeat;
         background-clip: text;
         -webkit-background-clip: text;
-        transition: background-position 0.13s ease-out;
+        transition: background-position 0.1s ease-out;
         cursor: pointer;
       }
       input {
@@ -97,7 +98,7 @@ form {
 #left {
   grid-row: 3/4;
   place-self: center end;
-  margin-right: 30%;
+  margin-right: 20%;
 }
 #right {
   grid-row: 3/4;
@@ -105,7 +106,7 @@ form {
   grid-template-rows: 100%;
   place-self: center start;
   position: relative;
-  margin-left: 30%;
+  margin-left: 20%;
   .arrow {
     grid-row: 1/2;
     place-self: center;
@@ -113,10 +114,19 @@ form {
   #progress {
     position: absolute;
     height: 100%;
-    transform: translateX(30%);
+    margin-left: 500%;
     stroke-width: 3px;
-    .grad {
-      stroke: linear-gradient(to bottom, #fbc3a5, #fbc3a500);
+    #Rectangle_47 {
+      transform: translateY(28%);
+    }
+    #Rectangle_46 {
+      transform: translateY(56%);
+    }
+    #Rectangle_45 {
+      transform: translateY(85%);
+      height: 15%;
+      bottom: 0;
+      fill: $bright-green;
     }
   }
 }
@@ -130,7 +140,7 @@ form {
     stroke: $grey-font;
   }
   &.green {
-    stroke: $green;
+    stroke: $bright-green;
     transform: rotate(180deg);
   }
 }
