@@ -170,17 +170,34 @@ form {
 }
 
 .personal {
-  display: initial !important;
+  // display: initial !important;
+  margin: 0 10vw;
+  place-content: center;
+  // grid-template-rows: repeat(3, 1fr);
 }
 .form-wrap {
   display: grid;
+  margin: 1vw;
   padding-bottom: 4vh;
+  // place-self: center;
+  width: 70%;
 }
 .form-wrap input {
-  // outline: none !important;
+  outline: none;
   border: none !important;
   border-bottom: 1px solid grey !important;
   fill: none;
   background-color: transparent;
-  height: 4vh;
+  max-height: 6vh;
+  color: white;
+}
+.form-wrap label {
+  transform: translateY(-33px);
+  transition: 0.1s ease-out;
+  font-size: 1rem;
+}
+
+.form-wrap input:focus ~ label {
+  transform: translateY(-66px);
+  font-size: 0.7rem;
 }
