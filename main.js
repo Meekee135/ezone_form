@@ -1,5 +1,5 @@
 import "./styles/main.scss";
-import curDot from "cursor-dot";
+// import curDot from "cursor-dot";
 // const cursor = curDot();
 // cursor({
 //     zIndex: 2,
@@ -10,8 +10,8 @@ import curDot from "cursor-dot";
 //   background: "#ddd",
 // });
 
-import { gsap, ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger);
+// import { gsap, ScrollTrigger } from "gsap/all";
+// gsap.registerPlugin(ScrollTrigger);
 
 document.querySelector(".a3").addEventListener("click", openModal);
 
@@ -25,6 +25,7 @@ function openModal() {
 document.querySelector(".btn.yes").addEventListener("click", openPopup);
 
 function openPopup() {
+  console.log("clicked");
   document.querySelector(".popup").classList.add("form-window");
 
   // document.querySelector(".closeArticle").addEventListener("click", () => {
