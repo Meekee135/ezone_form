@@ -35,3 +35,22 @@ function openPopup() {
     //     document.querySelector(".modal-article").style.display = "none";
     // });
 }
+
+document.querySelectorAll(".lastQ .field input").forEach(field => {
+    field.addEventListener("click", showSuggested)
+})
+
+function showSuggested() {
+    const count = document.querySelectorAll('input[type="checkbox"]:checked').length;
+    console.log(count);
+    if (count === 1) {
+        document.querySelector(".popup .articles .a1").style.display = "block";
+    } else if (count === 2) {
+        document.querySelector(".popup .articles .a2").style.display = "block";
+    } else if (count === 3) {
+        document.querySelector(".popup .articles .a3").style.display = "block";
+    } else if (count === 4) {
+        document.querySelector(".popup .articles .a4").style.display = "block";
+    }
+
+}
