@@ -41,51 +41,52 @@ document.querySelectorAll(".lastQ .field input").forEach((field) => {
 });
 
 function showSuggested() {
-    const count = document.querySelectorAll('input[type="checkbox"]:checked').length;
-    console.log(count);
-    const a1 = document.querySelector(".popup .articles .a1");
-    const a2 = document.querySelector(".popup .articles .a2");
-    const a3 = document.querySelector(".popup .articles .a3");
-    const a4 = document.querySelector(".popup .articles .a4");
-    if (count === 1) {
-        a1.style.transform = "translateY(400px)";
-        a1.style.display = "block";
-        a1.offsetHeight;
-        a1.style.transition = "transform .7s";
-        a1.style.transform = "translateY(0)";
-        a2.style.display = "none";
-    } else if (count === 2) {
-        a2.style.transform = "translateY(400px)";
-        a2.style.display = "block";
-        a2.offsetHeight;
-        a2.style.transition = "transform .7s";
-        a2.style.transform = "translateY(0)";
-        a3.style.display = "none";
-    } else if (count === 3) {
-        a3.style.transform = "translateY(400px)";
-        a3.style.display = "block";
-        a3.offsetHeight;
-        a3.style.transition = "transform .7s";
-        a3.style.transform = "translateY(0)";
-        a4.style.display = "none";
-    } else if (count === 4) {
-        a4.style.transform = "translateY(400px)";
-        a4.style.display = "block";
-        a4.offsetHeight;
-        a4.style.transition = "transform ..7s";
-        a4.style.transform = "translateY(0)";
-    } else if (count === 0) {
-        a1.style.display = "none";
   const count = document.querySelectorAll('input[type="checkbox"]:checked').length;
   console.log(count);
+  const a1 = document.querySelector(".popup .articles .a1");
+  const a2 = document.querySelector(".popup .articles .a2");
+  const a3 = document.querySelector(".popup .articles .a3");
+  const a4 = document.querySelector(".popup .articles .a4");
   if (count === 1) {
-    document.querySelector(".popup .articles .a1").style.display = "block";
+    a1.style.transform = "translateY(400px)";
+    a1.style.display = "block";
+    a1.offsetHeight;
+    a1.style.transition = "transform .7s";
+    a1.style.transform = "translateY(0)";
+    a2.style.display = "none";
   } else if (count === 2) {
-    document.querySelector(".popup .articles .a2").style.display = "block";
+    a2.style.transform = "translateY(400px)";
+    a2.style.display = "block";
+    a2.offsetHeight;
+    a2.style.transition = "transform .7s";
+    a2.style.transform = "translateY(0)";
+    a3.style.display = "none";
   } else if (count === 3) {
-    document.querySelector(".popup .articles .a3").style.display = "block";
+    a3.style.transform = "translateY(400px)";
+    a3.style.display = "block";
+    a3.offsetHeight;
+    a3.style.transition = "transform .7s";
+    a3.style.transform = "translateY(0)";
+    a4.style.display = "none";
   } else if (count === 4) {
-    document.querySelector(".popup .articles .a4").style.display = "block";
+    a4.style.transform = "translateY(400px)";
+    a4.style.display = "block";
+    a4.offsetHeight;
+    a4.style.transition = "transform ..7s";
+    a4.style.transform = "translateY(0)";
+  } else if (count === 0) {
+    a1.style.display = "none";
+    const count = document.querySelectorAll('input[type="checkbox"]:checked').length;
+    console.log(count);
+    if (count === 1) {
+      document.querySelector(".popup .articles .a1").style.display = "block";
+    } else if (count === 2) {
+      document.querySelector(".popup .articles .a2").style.display = "block";
+    } else if (count === 3) {
+      document.querySelector(".popup .articles .a3").style.display = "block";
+    } else if (count === 4) {
+      document.querySelector(".popup .articles .a4").style.display = "block";
+    }
   }
 }
 
@@ -141,4 +142,4 @@ function setMarker() {
       marker.style.height = "100%";
       break;
   }
-};
+}
