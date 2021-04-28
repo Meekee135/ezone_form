@@ -1,4 +1,14 @@
 import "./styles/main.scss";
+import curDot from "cursor-dot";
+// const cursor = curDot();
+// cursor({
+//     zIndex: 2,
+//   diameter: 80,
+//   borderWidth: 1,
+//   borderColor: "transparent",
+//   easing: 4,
+//   background: "#ddd",
+// });
 
 import { gsap, ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
@@ -11,5 +21,5 @@ function openModal() {
 
     document.querySelector(".closeArticle").addEventListener("click", () => {
         document.querySelector(".modal-article").style.display = "none";
-    })
+    });
 }

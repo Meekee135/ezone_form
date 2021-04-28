@@ -11,13 +11,13 @@ body {
   background-color: $dark-blue;
   height: 100vh;
   display: grid;
-  grid-template-rows: clamp(81px, 5.5vw, 105px) 140%;
+  grid-template-rows: clamp(81px, 5.5vw, 105px) 160%;
   // overflow: hidden;
 }
 nav {
-  height: clamp(81px, 5.5vw, 105px);
-  width: 100%;
   position: fixed;
+  width: 100%;
+  height: clamp(81px, 5.5vw, 105px);
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.11765);
   display: flex;
   justify-content: space-around;
@@ -96,6 +96,9 @@ main {
   border-top: 1px solid hsla(0, 0%, 100%, 0.11765);
   white-space: nowrap;
   backdrop-filter: blur(6px);
+  @supports not (backdrop-filter: blur(6px)) {
+    background-color: #16152bec;
+  }
   font-family: $action;
   color: $grey-font;
   font-size: clamp(16px, 1vw, 19px);
