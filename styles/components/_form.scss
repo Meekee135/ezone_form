@@ -18,7 +18,7 @@
   grid-template-columns: 1fr minmax(0, 800px) 1fr;
   grid-template-rows: clamp(81px, 5.5vw, 105px) 30% 35% 1fr;
   border-top: 1px solid hsla(0, 0%, 100%, 0);
-  backdrop-filter: blur(9px) brightness(85%) !important;
+  backdrop-filter: blur(10px) brightness(80%) !important;
   @supports not (backdrop-filter: blur(9px)) {
     background-color: #16152bec;
   }
@@ -40,19 +40,21 @@
 }
 form {
   justify-self: center;
-
   grid-row: 3/4;
   grid-column: 2/3;
   height: 100%;
   width: 100%;
   display: grid;
+  .checkboxes {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
   fieldset {
     position: relative;
     display: grid;
     height: 100%;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: repeat(4, 1fr);
     border: none;
+
     legend {
       position: absolute;
       transform: translateX(-50%);
@@ -74,7 +76,7 @@ form {
         font-size: 24px;
         color: transparent;
         text-transform: uppercase;
-        background: linear-gradient(-50deg, $grey-font 50%, $green 50%);
+        background: linear-gradient(-50deg, $grey-font 50%, $bright-green 50%);
         background-size: 230% 100%;
         background-position-x: 100%;
         background-repeat: no-repeat;
@@ -94,14 +96,16 @@ form {
 }
 #left {
   grid-row: 3/4;
-  place-self: center;
+  place-self: center end;
+  margin-right: 30%;
 }
 #right {
   grid-row: 3/4;
   height: 100%;
   grid-template-rows: 100%;
-  place-self: center;
+  place-self: center start;
   position: relative;
+  margin-left: 30%;
   .arrow {
     grid-row: 1/2;
     place-self: center;
@@ -111,6 +115,9 @@ form {
     height: 100%;
     transform: translateX(30%);
     stroke-width: 3px;
+    .grad {
+      stroke: linear-gradient(to bottom, #fbc3a5, #fbc3a500);
+    }
   }
 }
 
@@ -170,34 +177,38 @@ form {
 }
 
 .personal {
-  // display: initial !important;
-  margin: 0 10vw;
   place-content: center;
-  // grid-template-rows: repeat(3, 1fr);
-}
-.form-wrap {
-  display: grid;
-  margin: 1vw;
-  padding-bottom: 4vh;
-  // place-self: center;
-  width: 70%;
-}
-.form-wrap input {
-  outline: none;
-  border: none !important;
-  border-bottom: 1px solid grey !important;
-  fill: none;
-  background-color: transparent;
-  max-height: 6vh;
-  color: white;
-}
-.form-wrap label {
-  transform: translateY(-33px);
-  transition: 0.1s ease-out;
-  font-size: 1rem;
-}
-
-.form-wrap input:focus ~ label {
-  transform: translateY(-66px);
-  font-size: 0.7rem;
+  .input-wrap {
+    position: relative;
+    width: 300px;
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+    label {
+      position: absolute;
+      bottom: 5px;
+      left: 2%;
+      transition: all 0.2s ease;
+      font-size: 1rem;
+      cursor: text;
+    }
+    input {
+      width: 100%;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid hsla(0, 0%, 100%, 0.11765);
+      fill: none;
+      background-color: transparent;
+      color: white;
+      &:focus ~ label,
+      &:not(:placeholder-shown) ~ label {
+        transform: translateY(-25px);
+        left: 0;
+        font-size: 0.7rem;
+      }
+      &:focus ~ label {
+        color: $purple;
+      }
+    }
+  }
 }
