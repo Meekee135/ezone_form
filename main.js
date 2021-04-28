@@ -2,7 +2,7 @@ import "./styles/main.scss";
 // import curDot from "cursor-dot";
 // const cursor = curDot();
 // cursor({
-//     zIndex: 2,
+//   zIndex: 100,
 //   diameter: 80,
 //   borderWidth: 1,
 //   borderColor: "transparent",
