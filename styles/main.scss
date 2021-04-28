@@ -89,7 +89,8 @@ main {
 
 .popup {
   position: fixed;
-  transition: width 0.7s 0.3s ease-in-out, height 0.5s 0.5s ease-in-out, backdrop-fliter 0.3s 0.7s ease-out;
+  transition: width 0.7s 0.3s ease-in-out, height 0.5s 0.5s ease-in-out,
+    backdrop-fliter 0.3s 0.7s ease-out;
   bottom: 0;
   height: 80px;
   width: clamp(340px, 21vw, 395px);
@@ -150,4 +151,8 @@ main {
       border: 1px solid white;
     }
   }
+}
+
+.test {
+  border: 10px solid pink;
 }

@@ -40,6 +40,7 @@
 }
 form {
   justify-self: center;
+
   grid-row: 3/4;
   grid-column: 2/3;
   height: 100%;
@@ -125,4 +126,61 @@ form {
     stroke: $green;
     transform: rotate(180deg);
   }
+}
+.popup .articles {
+  margin-top: 4vh;
+  display: flex !important;
+  flex-direction: row !important;
+  border: 2px solid #a5a5ac;
+  width: min-content !important;
+  grid-area: 4/-3/5/-2;
+  padding: 2vw 4vw;
+  gap: 1rem !important;
+
+  .article {
+    width: 160px;
+    height: 220px;
+    padding: 1.5rem;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    position: relative;
+    transition: 0.2s ease-in-out;
+    p {
+      font-family: $big;
+      font-size: 1rem;
+      padding-bottom: 3rem;
+    }
+    h1 {
+      font-family: $copy-p;
+      font-weight: 900;
+      white-space: normal;
+      padding-bottom: 4rem;
+      font-size: 1vw;
+    }
+    button {
+      font-family: $action;
+      color: white;
+      border: 1px solid white;
+      position: absolute;
+      bottom: 1vw;
+    }
+  }
+}
+
+.personal {
+  display: initial !important;
+}
+.form-wrap {
+  display: grid;
+  padding-bottom: 4vh;
+}
+.form-wrap input {
+  // outline: none !important;
+  border: none !important;
+  border-bottom: 1px solid grey !important;
+  fill: none;
+  background-color: transparent;
+  height: 4vh;
 }
