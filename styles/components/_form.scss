@@ -174,7 +174,7 @@ form {
       font-weight: 900;
       white-space: normal;
       padding-bottom: 4rem;
-      font-size: 1vw;
+      font-size: clamp(0.8rem, 2.5vw, 0.7rem);
     }
     button {
       font-family: $action;
@@ -183,6 +183,9 @@ form {
       position: absolute;
       bottom: 1vw;
     }
+    // .a1::after {
+    //   transform: translateY(400px);
+    // }
   }
 }
 
