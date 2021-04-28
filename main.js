@@ -141,46 +141,4 @@ function setMarker() {
       marker.style.height = "100%";
       break;
   }
-}
-
-
-
-
-
-
-
-// asd
-//  // - create FLIP-animation to animate featureElement from img in target, to
-//     //   its intended position. Do it with normal animation or transition class!
-//     // FIRST
-//     const start = document.querySelector(`figure[data-feature="${feature}"`).getBoundingClientRect();
-//     console.log(start);
-//     // LAST
-//     const end = childElement.getBoundingClientRect();
-//     console.log(end);
-//     // INVERT (translate element to the start position)
-//     const diffX = start.x - end.x;
-//     const diffY = start.y - end.y;
-//     childElement.style.transform = `translate(${diffX}px, ${diffY}px)`;
-//     childElement.offsetHeight;
-//     // PLAY: animate the element to translate (0,0)
-//     childElement.style.transition = "transform 3s";
-//     childElement.style.transform = "translate(0, 0)";
-//     console.log(features);
-
-//     asd
-// const payload = {
-//     header: "hi mom",
-//     other: "here goes",
-//   };
-
-//   fetch(`/endpoint`, {
-//     method: "post",
-//     body: JSON.stringify(payload),
-//     headers: {
-//       Accept: "application/json",
-//       "Content-Type": "application/json",
-//     },
-//   })
-//     .then((res) => res.json())
-//     .then((d) => {});
+};
