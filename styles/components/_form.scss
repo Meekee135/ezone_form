@@ -54,7 +54,7 @@ form {
     display: grid;
     height: 100%;
     border: none;
-
+    display: none;
     legend {
       position: absolute;
       transform: translateX(-50%);
@@ -94,6 +94,9 @@ form {
       }
     }
   }
+  .visible {
+    display: grid;
+  }
 }
 #left {
   grid-row: 3/4;
@@ -114,27 +117,32 @@ form {
   #progress {
     position: absolute;
     height: 100%;
-    margin-left: 500%;
+    margin-left: 450%;
+    // margin-left: 100%;
     stroke-width: 3px;
-    #Rectangle_47 {
-      transform: translateY(28%);
-    }
-    #Rectangle_46 {
-      transform: translateY(56%);
-    }
-    #Rectangle_45 {
-      transform: translateY(85%);
-      height: 15%;
-      bottom: 0;
-      fill: $bright-green;
+    #Group_46 {
+      #Rectangle_47 {
+        transform: translateY(28%);
+      }
+      #Rectangle_46 {
+        transform: translateY(56%);
+      }
+      #Rectangle_45 {
+        fill: $bright-green;
+        transform: scaleY(-1);
+        height: 15%;
+        transition: 0.4s cubic-bezier(0.25, 0.68, 0.21, 0.99);
+      }
     }
   }
 }
 
 .arrow {
+  cursor: pointer;
   path {
     stroke-width: 3px;
     fill: none;
+    pointer-events: none;
   }
   &.grey {
     stroke: $grey-font;
