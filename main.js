@@ -13,20 +13,21 @@ import curDot from "cursor-dot";
 import { gsap, ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
-
-document.querySelectorAll(".articles .article").forEach(article => {
-    article.addEventListener("click", openModal);
-})
+document.querySelector(".a3").addEventListener("click", openModal);
 
 function openModal() {
-    document.querySelector(".modal-article").style.display = "block";
+  document.querySelector(".modal-article").style.display = "block";
 
-    document.querySelector(".closeArticle").addEventListener("click", () => {
-        document.querySelector(".modal-article").style.display = "none";
-    });
+  document.querySelector(".closeArticle").addEventListener("click", () => {
+    document.querySelector(".modal-article").style.display = "none";
+  });
+}
+document.querySelector(".btn.yes").addEventListener("click", openPopup);
 
-    document.querySelector(".showMore .btn").addEventListener("click", () => {
-        document.querySelector(".modal-article").style.display = "none";
+function openPopup() {
+  document.querySelector(".popup").classList.add("form-window");
 
-    })
+  // document.querySelector(".closeArticle").addEventListener("click", () => {
+  //     document.querySelector(".modal-article").style.display = "none";
+  // });
 }

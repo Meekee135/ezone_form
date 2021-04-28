@@ -89,13 +89,14 @@ main {
 
 .popup {
   position: fixed;
-  // transform: translateX(-110%);
+  transition: width 0.7s 0.3s ease-in-out, height 0.5s 0.5s ease-in-out, backdrop-fliter 0.3s 0.7s ease-out;
+  // transition: height 0.5s 0.35s ease-in-out;
   bottom: 0;
   height: 80px;
   width: clamp(340px, 21vw, 395px);
   border-top: 1px solid hsla(0, 0%, 100%, 0.11765);
   white-space: nowrap;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px) opacity(100%);
   @supports not (backdrop-filter: blur(6px)) {
     background-color: #16152bec;
   }

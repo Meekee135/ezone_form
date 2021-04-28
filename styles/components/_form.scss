@@ -17,16 +17,22 @@
   display: grid;
   grid-template-columns: 1fr minmax(0, 800px) 1fr;
   grid-template-rows: clamp(81px, 5.5vw, 105px) 30% 30% 1fr;
-  border: none !important;
-  backdrop-filter: blur(10px) brightness(50%) !important;
+  border-top: 1px solid hsla(0, 0%, 100%, 0);
+  // backdrop-filter: blur(10px) brightness(90%) !important;
+  backdrop-filter: blur(9px) opacity(100%) !important;
   @supports not (backdrop-filter: blur(10px)) {
     background-color: #16152bec;
   }
   #start {
-    left: -40%;
-    display: none;
+    & > * {
+      transform: translateX(-120%) !important;
+      transition: 0.6s ease-out;
+      &:not(:first-child) {
+        transition-delay: 0.15s;
+      }
+    }
   }
-  #mid {
+  & > :not(:first-child) {
     display: inherit !important;
   }
 }
@@ -85,9 +91,31 @@ form {
 }
 #left {
   grid-row: 3/4;
-  display: block;
+  justify-self: center;
+  align-self: center;
 }
 #right {
   grid-row: 3/4;
-  display: block;
+  justify-self: center;
+  align-self: center;
+
+  .arrow {
+    transform: rotate(180deg);
+  }
+}
+
+.arrow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  path {
+    stroke-width: 3px;
+    fill: none;
+  }
+  &.grey {
+    stroke: $grey-font;
+  }
+  &.green {
+    stroke: $green;
+  }
 }
