@@ -36,6 +36,10 @@
     border: 1px solid white;
   }
 }
+.article:hover {
+  cursor: pointer;
+  transform: scale(0.95);
+}
 .a1 {
   background-image: url(../../public/image6.jpg);
 }
