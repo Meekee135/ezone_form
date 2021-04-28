@@ -2,7 +2,7 @@
 .articles {
   align-self: end;
   justify-self: center;
-  width: 100vw;
+  width: 95vw;
   height: 550px;
   z-index: 1;
   display: flex;
@@ -12,7 +12,6 @@
   gap: 3rem;
 }
 .article {
-  background-color: red;
   width: 220px;
   height: 330px;
   padding: 1.5rem;
@@ -20,6 +19,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
+  position: relative;
+  transition: 0.2s ease-in-out;
   p {
     font-family: $big;
     padding-bottom: 3rem;
@@ -33,11 +34,23 @@
     font-family: $action;
     color: white;
     border: 1px solid white;
+    position: absolute;
+    bottom: 1vw;
   }
 }
+
+.article:nth-child(odd) {
+  height: 310px;
+  transform: translateY(-20px);
+  &:hover {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
 .article:hover {
   cursor: pointer;
-  transform: scale(0.95);
+  transform: scale(1.05);
+  filter: brightness(50%);
 }
 .a1 {
   background-image: url(../../public/image6.jpg);
@@ -59,13 +72,13 @@
   background-color: rgb(22, 21, 43, 0.9);
   color: white;
   margin: auto;
-  margin-top: 30px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
   overflow-y: auto;
   padding-right: 17px;
+  padding-top: 3vw;
   overflow: -moz-scrollbars-none;
 }
 
@@ -107,6 +120,9 @@
     grid-area: 3/1/4/3;
     height: 500px;
     font-family: $copy-header;
+    h2 {
+      padding-bottom: 2vh;
+    }
   }
 }
 .modal-article::-webkit-scrollbar {
@@ -117,9 +133,11 @@
 .showMore {
   grid-area: 4/1/5/3;
   color: $green;
-  height: 400px;
+  height: 200px;
   font-family: $copy-header;
   font-size: 24px;
+  position: relative;
+  top: -10vh;
 
   display: grid;
   place-content: center;
@@ -132,9 +150,9 @@
 }
 
 .closeArticle {
+  position: sticky;
   height: 6vw;
   width: 6vw;
-  right: 4vw;
+  left: 90vw;
   top: 1vw;
-  position: absolute;
 }

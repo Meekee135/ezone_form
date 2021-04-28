@@ -14,7 +14,9 @@ import { gsap, ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
 
-document.querySelector(".a3").addEventListener("click", openModal);
+document.querySelectorAll(".articles .article").forEach(article => {
+    article.addEventListener("click", openModal);
+})
 
 function openModal() {
     document.querySelector(".modal-article").style.display = "block";
@@ -22,4 +24,9 @@ function openModal() {
     document.querySelector(".closeArticle").addEventListener("click", () => {
         document.querySelector(".modal-article").style.display = "none";
     });
+
+    document.querySelector(".showMore .btn").addEventListener("click", () => {
+        document.querySelector(".modal-article").style.display = "none";
+
+    })
 }
