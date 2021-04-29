@@ -95,8 +95,9 @@
         </div>
       </span>
       <div id="left">
-        <svg id="prev" class="arrow grey" width="32" height="22">
-          <path viewBox="0 0 32 22" d="M1, 1 L 16, 20 L 31, 1" />
+        <svg id="prev" class="arrow grey" viewBox="0 0 32 43" width="32" height="44">
+          <path d="M1, 1  L 31, 42" pathLength="2" />
+          <path d="M31, 1  L 1, 42" pathLength="2" />
         </svg>
       </div>
       <form id="mid" action="submit">
@@ -230,36 +231,54 @@
           <legend></legend>
 
           <div class="input-wrap">
-            <input type="text" id="firstname" name="" placeholder=" " />
+            <input type="text" id="firstname" name="" placeholder=" " autocomplete="given-name" required />
             <label for="firstname">FIRST NAME</label>
           </div>
           <div class="input-wrap">
-            <input type="text" id="lastname" name="" placeholder=" " autocomplete="lastname" />
+            <input type="text" id="lastname" name="" placeholder=" " autocomplete="family-name" required />
             <label for="lastname">LAST NAME</label>
           </div>
           <div class="input-wrap">
-            <input type="email" id="mail" name="" placeholder=" " />
-            <label for="mail">MAIL</label>
+            <input type="email" id="email" name="" placeholder=" " autocomplete="email" required />
+            <label for="email">EMAIL</label>
           </div>
+          <div class="input-wrap">
+            <input type="password" id="pas" name="" placeholder=" " autocomplete="email" minlength="8" required />
+            <label for="pas">PASSWORD</label>
+            <span>pass must be 8 char long</span>
+          </div>
+          <div class="input-wrap">
+            <input type="date" id="dob" name="" placeholder="30-04-2021" required />
+            <label for="dob">DATE OF BIRTH</label>
+            <span>you must be over 18yo</span>
+          </div>
+          <div class="input-wrap">
+            <input type="checkbox" id="tos" name="" required />
+            <label for="tos">AGREE TO TERMS OF SERVICE</label>
+          </div>
+        </fieldset>
+        <fieldset class="personal">
+          <legend>Welocome on board</legend>
         </fieldset>
       </form>
       <div class="articles">
-        <article class="article a1" style="display: none">
+        <!-- <h1>this articles are ready for you to unlock</h1> -->
+        <article class="article a1">
           <p>STORY</p>
           <h1>How Esports Athletes Can Prevent Stress</h1>
           <button class="btn btn-art">STRESS</button>
         </article>
-        <article class="article a2" style="display: none">
+        <article class="article a2">
           <p>INFOGRAPHICS</p>
           <h1>The Optimal Ergonomics For Any Gaming Setup</h1>
           <button class="btn">PHYSIOLOGY</button>
         </article>
-        <article class="article a3" style="display: none">
+        <article class="article a3">
           <p>EXPLAINER VIDEO</p>
           <h1>Top Tips For Good Sleeping Habits</h1>
           <button class="btn">SLEEP</button>
         </article>
-        <article class="article a4" style="display: none">
+        <article class="article a4">
           <p>EXPLAINER VIDEO</p>
           <h1>Understanding The Body's Stress Response</h1>
           <button class="btn">STRESS</button>

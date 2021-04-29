@@ -16,9 +16,9 @@
   height: 100vh !important;
   display: grid;
   grid-template-columns: 1fr minmax(0, 800px) 1fr;
-  grid-template-rows: clamp(81px, 5.5vw, 105px) 30% 35% 1fr;
+  grid-template-rows: clamp(81px, 5.5vw, 105px) 30% clamp(200px, 15vw, 300px) 1fr;
   border-top: 1px solid hsla(0, 0%, 100%, 0);
-  backdrop-filter: blur(10px) brightness(80%) !important;
+  backdrop-filter: blur(10px) brightness(50%) !important;
   @supports not (backdrop-filter: blur(9px)) {
     background-color: #16152bec;
   }
@@ -27,7 +27,7 @@
       transform: translateX(-120%) !important;
       transition: 0.6s ease-out;
       &:not(:first-child) {
-        transition-delay: 0.15s;
+        transition-delay: 0.2s;
       }
     }
   }
@@ -51,10 +51,10 @@ form {
   }
   fieldset {
     position: relative;
-    display: grid;
     height: 100%;
     border: none;
     display: none;
+    opacity: 1;
     legend {
       position: absolute;
       transform: translateX(-50%);
@@ -67,13 +67,14 @@ form {
     .field {
       display: grid;
       max-width: 100%;
-      justify-content: center;
       padding: 0;
       height: min-content;
       grid-gap: 0;
+      place-self: center;
       label {
         font-family: $action;
-        font-size: 24px;
+        // font-size: 1.5rem;
+        font-size: 1.4vw;
         color: transparent;
         text-transform: uppercase;
         // background: linear-gradient(-50deg, $grey-font 50%, $bright-green 50%);
@@ -96,6 +97,7 @@ form {
   }
   .visible {
     display: grid;
+    // opacity: 1;
   }
 }
 #left {
@@ -118,7 +120,6 @@ form {
     position: absolute;
     height: 100%;
     margin-left: 450%;
-    // margin-left: 100%;
     stroke-width: 3px;
     #Group_46 {
       #Rectangle_47 {
@@ -128,7 +129,7 @@ form {
         transform: translateY(56%);
       }
       #Rectangle_45 {
-        fill: $bright-green;
+        fill: $green;
         transform: scaleY(-1);
         height: 15%;
         transition: 0.4s cubic-bezier(0.25, 0.68, 0.21, 0.99);
@@ -148,34 +149,45 @@ form {
     stroke: $grey-font;
   }
   &.green {
-    stroke: $bright-green;
+    stroke: $green;
     transform: rotate(180deg);
   }
 }
+#left .arrow {
+  stroke-dasharray: 2;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.2s ease-out;
+  &.cross {
+    stroke-dashoffset: 0;
+  }
+}
 .popup .articles {
-  margin-top: 4vh;
+  position: absolute;
+  // border: 2px solid #a5a5ac;
+  width: min-content !important;
+  padding: 1rem 1rem !important;
+  gap: 1rem !important;
+  height: min-content !important;
   display: flex !important;
   flex-direction: row !important;
-  border: 2px solid #a5a5ac;
-  width: min-content !important;
-  grid-area: 4/-3/5/-2;
-  padding: 2vw 4vw;
-  gap: 1rem !important;
+  bottom: -90px;
 
   .article {
-    width: 160px;
-    height: 220px;
-    padding: 1.5rem;
+    width: calc(160px * 0.8);
+    height: calc(220px * 0.8);
+    padding: 1rem;
     border-radius: 4px;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
     position: relative;
     transition: 0.2s ease-in-out;
+    transform: translateY(60%);
+    filter: grayscale(0.8);
+    transition: 0.4s cubic-bezier(0.25, 0.68, 0.21, 0.99);
+    pointer-events: none;
     p {
-      font-family: $big;
-      font-size: 1rem;
-      padding-bottom: 3rem;
+      display: none;
     }
     h1 {
       font-family: $copy-p;
@@ -194,17 +206,30 @@ form {
     // .a1::after {
     //   transform: translateY(400px);
     // }
+    &:hover {
+      transform: translateY(0px) scale(1);
+    }
+  }
+  .paint {
+    width: 160px;
+    height: 220px;
+    transform: translateY(-165%) !important;
+    filter: grayscale(0) !important;
+    pointer-events: all;
+  }
+  .above {
+    transform: translateY(0%);
   }
 }
 
 .personal {
-  place-content: center;
+  // transform: translateY(-100%);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   .input-wrap {
+    place-self: center;
     position: relative;
     width: 300px;
-    &:not(:last-child) {
-      margin-bottom: 40px;
-    }
     label {
       position: absolute;
       bottom: 5px;
@@ -212,23 +237,96 @@ form {
       transition: all 0.2s ease;
       font-size: 1rem;
       cursor: text;
+      font-family: $big;
     }
-    input {
+    input:not(#tos) {
+      font-family: $action;
       width: 100%;
+      font-size: 1.7rem;
       outline: none;
       border: none;
       border-bottom: 1px solid hsla(0, 0%, 100%, 0.11765);
       fill: none;
       background-color: transparent;
       color: white;
+      padding-left: 15px;
       &:focus ~ label,
       &:not(:placeholder-shown) ~ label {
-        transform: translateY(-25px);
+        transform: translateY(-30px);
         left: 0;
-        font-size: 0.7rem;
+        font-size: 0.9rem;
       }
-      &:focus ~ label {
-        color: $purple;
+      &:focus:not(#tos) ~ label {
+        color: $purple !important;
+      }
+      &:not(:focus):valid ~ label {
+        color: $green;
+      }
+      &:not(:focus, :placeholder-shown, #dob):invalid ~ label {
+        color: rgb(196, 0, 0);
+      }
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px #0b0a15 inset !important;
+        -webkit-text-fill-color: white !important;
+      }
+      &[type="date"]::-webkit-calendar-picker-indicator {
+        background: transparent;
+        bottom: 0;
+        color: transparent;
+        cursor: pointer;
+        height: auto;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: auto;
+      }
+    }
+    #dob {
+      font-size: 1.3em !important;
+      & ~ label {
+        left: 1% !important;
+      }
+      & ~ span {
+        position: absolute;
+        right: 0;
+        bottom: 5px;
+        font-size: 0.7rem;
+        // color: rgb(196, 0, 0);
+        visibility: hidden;
+      }
+      &:not(:focus) {
+        color: $grey-font !important;
+      }
+    }
+    #email {
+      font-size: 1.3em !important;
+    }
+    #tos {
+      transform: translateX(25%);
+      width: 100%;
+      bottom: 4px;
+      right: -70px;
+
+      & ~ label {
+        bottom: 0px !important;
+        cursor: pointer;
+      }
+      &:checked ~ label {
+        color: $green;
+      }
+    }
+    #pas {
+      & ~ span {
+        position: absolute;
+        right: 0;
+        bottom: 5px;
+        font-size: 0.7rem;
+        // color: rgb(196, 0, 0);
+        visibility: hidden;
+      }
+      &:not(:focus, :placeholder-shown):invalid ~ span {
+        visibility: visible;
       }
     }
   }
