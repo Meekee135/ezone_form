@@ -1,4 +1,4 @@
-@use '../abstracts/' as *;
+@use "../abstracts/" as *;
 // to do
 // |-change divs#mid ... to semantic markup (somethink like dataset, formfiled, form ?) in index.html
 // |
@@ -330,4 +330,9 @@ form {
       }
     }
   }
+}
+#fix > p {
+  place-self: center;
+  grid-row: 1/2;
+  grid-column: 1/-1;
 }

@@ -158,6 +158,7 @@ function setMarker() {
       });
       break;
     case 4:
+      hidePopup();
       break;
   }
 }
